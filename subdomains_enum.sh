@@ -49,7 +49,7 @@ fi
 echo -e "######Starting amass active ######\n"
 amass enum -active -d $domain -ip | tee -a amass_ips.txt
 cat amass_ips.txt | awk '{print $1}' | tee -a passive.txt
-cat op.txt | sort -u | tee -a all.txt
+cat passive.txt | sort -u | tee -a all.txt
 
 echo -e "######Starting Bruteforce######\n"
 altdns -i all.txt -o data_output -w ~/tools/recon/words.txt -r -s dns_op.txt
