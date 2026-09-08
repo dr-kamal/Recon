@@ -24,7 +24,7 @@ echo -e "######Starting assetfinder ######\n"
 assetfinder --subs-only $domain > assetfinder.txt
 
 echo -e "######Starting github subdomains enumeration ######\n"
-python3 ~/tools/github-subdomains.py -t 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 -d $domain > github.txt
+python3 ~/tools/github-subdomains.py -t ghp_ -d $domain > github.txt
 
 cat sublister.txt subfinder.txt assetfinder.txt github.txt > passive1.txt
 rm sublister.txt subfinder.txt assetfinder.txt github.txt
